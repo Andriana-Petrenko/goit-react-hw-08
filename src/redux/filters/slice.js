@@ -1,4 +1,4 @@
-import {INITIAL_STATE} from './contactsSlice'
+import {INITIAL_STATE} from '../contacts/slice'
 import { createSlice } from "@reduxjs/toolkit"
 
 const filtersSlice = createSlice({
@@ -14,5 +14,3 @@ const filtersSlice = createSlice({
 
 export const { changeFilter } = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;
-
- 
