@@ -21,7 +21,7 @@ const handlePending = (state) => {
   state.loading = true;
 }
 
-const contactsSlice = createSlice({
+const slice = createSlice({
   name: 'contacts',
   initialState: INITIAL_STATE.contacts,
   extraReducers: builder => {
@@ -49,5 +49,5 @@ const contactsSlice = createSlice({
 
 
 // export const { addContact, deleteContact } = contactsSlice.actions;
-export const contactsReducer = contactsSlice.reducer;
+export const contactsReducer = slice.reducer;
 
