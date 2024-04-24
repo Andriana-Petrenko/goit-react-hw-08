@@ -6,7 +6,7 @@ import UserMenu from "../UserMenu/UserMenu";
 import css from './AppBar.module.css'
 
 const AppBar = () => {
-    const { isLoggedIn } = useSelector(selectIsLoggedIn);
+    const isLoggedIn  = useSelector(selectIsLoggedIn);
     return (
         <header className={css.header}>
             <Navigation />

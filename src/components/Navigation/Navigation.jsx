@@ -9,7 +9,7 @@ const activeLinkClass = ({ isActive }) => {
 };
 
 const Navigation = () => {
-     const { isLoggedIn } = useSelector(selectIsLoggedIn);
+     const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <nav className={css.nav}>
       <NavLink className={activeLinkClass} to="/">

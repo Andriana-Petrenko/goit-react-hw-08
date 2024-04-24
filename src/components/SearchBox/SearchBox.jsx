@@ -1,7 +1,7 @@
-import css from "./SearchBox.module.css"
-import {useSelector,useDispatch} from 'react-redux'
-import {changeFilter} from '../../redux/filters/slice'
-import {selectNameFilter} from '../../redux/contacts/selectors'
+import css from "./SearchBox.module.css";
+import { useSelector, useDispatch } from 'react-redux';
+import { changeFilter } from '../../redux/filters/slice';
+import { selectNameFilter } from '../../redux/contacts/selectors';
 
 const SearchBox = () => {
      
@@ -12,7 +12,7 @@ const SearchBox = () => {
   }
 
     return (
-        <label className={css.filter}>Find contacts by name
+        <label className={css.filter}>Find contacts
             <input type="text" value={filters} onChange={onChangeFilter}/></label> 
   )
 }
