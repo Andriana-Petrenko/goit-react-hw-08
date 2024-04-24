@@ -17,12 +17,12 @@
 }
 
 .active {
-    background-color: rgb(144, 26, 228);
+    background-color: rgba(91, 83, 97, 0.314);
 
 }
 
 .navLink:hover,
 .navLink:focus {
-    color: rgb(50, 19, 107);
+    color: rgb(144, 26, 228);
     transform: scale(1.04);
 }

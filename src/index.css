@@ -16,9 +16,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   color: #0b0c0b;
-  background-image: url(./img/wp13296761-phone-book-wallpapers.jpg);
-  background-size: cover;
-  background-position: right bottom 30%;
+  background-color: rgb(225, 222, 227);
 }
 
 h1,h2,p {

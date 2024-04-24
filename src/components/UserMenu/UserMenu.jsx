@@ -9,7 +9,7 @@ const UserMenu = () => {
 
   return (
     <div className={css.wrapper} >
-      <p>Welcome, {user.name}</p>
+      <p className={css.name_user}>Welcome, {user.name}</p>
           <button className={css.logOut_button} type="button" onClick={() => dispatch(logout())}>
         Logout
       </button>

@@ -1,0 +1,21 @@
+.wrapper{
+    
+        
+        display: flex;
+    justify-content: flex-start;
+}
+
+.title{
+    font-size: 36px;
+    text-transform: uppercase;
+    margin: auto;
+}
+
+.image{
+    background-image: url(../../img//istockphoto-1398807156-612x612-min.jpg);
+        background-position:100%;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        padding-bottom: 500px;
+        width: 100%;
+}
