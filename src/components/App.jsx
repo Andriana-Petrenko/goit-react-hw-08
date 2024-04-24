@@ -1,12 +1,6 @@
 import './App.css'
-import ContactList from './ContactList/ContactList'
-import ContactForm from './ContactForm/ContactForm'
-import SearchBox from './SearchBox/SearchBox'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { useEffect } from 'react';
-import { fetchContacts } from '../redux/contacts/operations';
-import { selectLoading,selectError } from '../redux/contacts/selectors';
-import Loader from './Loader/Loader';
 import { lazy } from 'react';
 import Layout from './Layout/Layout';
 import { Route, Routes } from 'react-router-dom';
@@ -31,11 +25,6 @@ function App() {
 
   return (
   <>
-      
-      {/* <ContactForm />
-      <SearchBox />
-      {loading && !error && <Loader />}
-      <ContactList /> */}
       <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />

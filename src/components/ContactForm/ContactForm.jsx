@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import css from "./ContactForm.module.css"
 import { useDispatch } from 'react-redux'
 import { addContact } from '../../redux/contacts/operations'
-
+import { Toaster } from 'react-hot-toast'
 
 const ContactFormSchema = Yup.object().shape({
   name: Yup.string().min(3, "Too Short!").max(50, "Too Long!").required("Required"),
@@ -26,7 +26,8 @@ const ContactForm = () => {
     dispatch(addContact(finalContact));
     actions.resetForm();
     }
-  return (
+  return (<>
+    <Toaster position="top-center" reverseOrder={false}/>
       <Formik initialValues={initialValues} onSubmit= {handleSubmit} validationSchema={ContactFormSchema}>
       <Form className={css.form}>
               <label htmlFor={nameFieldId}>Name</label>
@@ -38,7 +39,7 @@ const ContactForm = () => {
 			<button  className={css.add_button} type="submit">Add contact</button>
 			</Form>
     </Formik>
-
+</>
           
   )
 }

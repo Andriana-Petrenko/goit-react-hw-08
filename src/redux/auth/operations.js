@@ -25,8 +25,6 @@ export const register = createAsyncThunk(
   }
 );
 
-
-// тут теба передати мейл і пароль з форми логіну
 export const login = createAsyncThunk(
   'auth/login',
   async (loginData, thunkAPI) => {
@@ -53,7 +51,6 @@ export const logout = createAsyncThunk(
   }
 );
 
-// В App
 export const refreshUser = createAsyncThunk(
   "auth/refresh",
   async (_, thunkApi) => {
@@ -63,8 +60,8 @@ export const refreshUser = createAsyncThunk(
       setToken(token);
       const response = await instance.get("/users/current");
       return response.data;
-    } catch (e) {
-      return thunkApi.rejectWithValue(e.message);
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
     }
   }
 );
