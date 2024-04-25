@@ -5,14 +5,18 @@ import { useSelector } from 'react-redux'
 
 
 const ContactList=() =>{
-  const filteredContacts = useSelector(selectFilteredContacts)
-  return (
-      <ul className={css.contact_list}>
+  const filteredContacts = useSelector(selectFilteredContacts);
+  
+  return (<>
+    <ul className={css.contact_list}>
       {(filteredContacts.length===0)? (<p>You do not have any contact!</p> ):
         filteredContacts.map(contact => {
               return (<Contact key={contact.id} contact={contact} />)
           })} 
     </ul>
+    
+  </>
+      
   )
 }
 

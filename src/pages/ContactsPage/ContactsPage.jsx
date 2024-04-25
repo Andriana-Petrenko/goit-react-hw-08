@@ -2,15 +2,20 @@ import { useDispatch, useSelector } from "react-redux";
 import ContactForm from "../../components/ContactForm/ContactForm"
 import ContactList from "../../components/ContactList/ContactList"
 import SearchBox from "../../components/SearchBox/SearchBox"
-import { selectError, selectLoading } from "../../redux/contacts/selectors";
+import {selectDeletedContact, selectError, selectLoading, selectModal} from "../../redux/contacts/selectors";
 import Loader from "../../components/Loader/Loader";
 import { useEffect } from "react";
 import { fetchContacts } from "../../redux/contacts/operations";
+import Modal from "../../components/Modal/Modal";
+
+
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
+  const modal = useSelector(selectModal);
+  const deletedContactId=useSelector(selectDeletedContact);
 
   useEffect(() => {
     dispatch(fetchContacts());    
@@ -21,6 +26,7 @@ const ContactsPage = () => {
     <SearchBox />
     {loading && !error && <Loader />}
     <ContactList />
+    {modal && <Modal contactId={deletedContactId} />}
   </>
   )
 }

@@ -9,6 +9,8 @@
     padding: 20px;
     max-width: 250px;
     background-color: rgba(206, 206, 216, 0.81);
+    min-height: 255px;
+    font-size: 18px;
 }
 
 .error {
@@ -18,14 +20,18 @@
 
 .form>input {
     width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 16px;
 }
 
 .add_button {
     margin: 0 auto;
-    height: 30px;
     border: none;
-    border-radius: 8px;
+    border-radius: 20px;
     font-weight: 500;
+    padding: 10px;
+    width: 120px;
 }
 
 .add_button:hover {
