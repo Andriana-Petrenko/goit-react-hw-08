@@ -14,13 +14,14 @@ import toast from "react-hot-toast";
    },
    
 }
-const handleRejected = (state, action) => {
+const handleRejected = (state) => {
   state.loading = false;
-  state.items = action.payload;
+  state.error = true;
 }
 
 const handlePending = (state) => {
   state.loading = true;
+  state.error = false;
 }
 
 const slice = createSlice({
@@ -31,38 +32,41 @@ const slice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(fetchContacts.pending, handlePending)
+      .addCase(addContact.pending, handlePending)
+      .addCase(deleteContact.pending, handlePending)
+
       .addCase(fetchContacts.fulfilled, (state, action) => {
         state.loading = false;
         state.items = action.payload;
       })
-      .addCase(fetchContacts.rejected, handleRejected)
-      .addCase(addContact.pending,handlePending)
       .addCase(addContact.fulfilled, (state, action) => {
         state.loading = false;
         state.items.push(action.payload);
-           toast('You add a new contact!', {
-      style: {
-        borderRadius: '10px',
-        background: 'rgb(144, 26, 228)',
-        color: '#fff',
+        toast('You add a new contact!', {
+          style: {
+            borderRadius: '10px',
+            background: 'rgb(144, 26, 228)',
+            color: '#fff',
       }
     });
       })
-    .addCase(addContact.rejected, handleRejected)
-    .addCase(deleteContact.pending, handlePending)
-    .addCase(deleteContact.fulfilled, (state, action) => {
+      .addCase(deleteContact.fulfilled, (state, action) => {
       state.loading = false;
-      state.items = state.items.filter((item) => item.id !== action.payload.id);
-      
+        state.items = state.items.filter((item) => item.id !== action.payload.id);
         toast(`You deleted ${action.payload.name}!`, {
-      style: {
-        borderRadius: '10px',
-        background: 'rgb(144, 26, 228)',
-        color: '#fff',
+          style: {
+            borderRadius: '10px',
+            background: 'rgb(144, 26, 228)',
+            color: '#fff',
       }
     });
-    })
-    .addCase(deleteContact.rejected, handleRejected)
+      })
+      
+      .addCase(fetchContacts.rejected, handleRejected)
+      .addCase(addContact.rejected, handleRejected)
+      .addCase(deleteContact.rejected, handleRejected)
+    
+    
   },
 });
 

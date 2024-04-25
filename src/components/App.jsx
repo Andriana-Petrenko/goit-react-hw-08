@@ -12,6 +12,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 
 
+
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
@@ -25,8 +26,7 @@ function App() {
     dispatch(refreshUser());    
   }, [dispatch]);
 
-  return (
-  <>
+  return  (<>
       <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />

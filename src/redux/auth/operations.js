@@ -54,9 +54,13 @@ export const logout = createAsyncThunk(
 export const refreshUser = createAsyncThunk(
   "auth/refresh",
   async (_, thunkApi) => {
+    const state = thunkApi.getState();
+    const token = state.auth.token;
+    
+    if (token === null) {
+      return thunkApi.rejectWithValue('Unable to fetch user');
+    }
     try {
-      const state = thunkApi.getState();
-      const token = state.auth.token;
       setToken(token);
       const response = await instance.get("/users/current");
       return response.data;
@@ -65,3 +69,4 @@ export const refreshUser = createAsyncThunk(
     }
   }
 );
+
