@@ -56,41 +56,12 @@
     border: 1px solid black;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
         border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color:black
 }
 
 .close_button:hover,
 .close_button:focus {
     transform: scale(1.2);
-}
-
-.delete_button {
-    font-size: 16px;
-    letter-spacing: 1px;
-    padding: 13px 20px 13px;
-    outline: 0;
-    border: 1px solid black;
-    cursor: pointer;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0);
-    border-radius: 20px;
-}
-
-.delete_button:after {
-    content: "";
-    background-color: #54287e3c;
-    width: 100%;
-    z-index: -1;
-    position: absolute;
-    height: 100%;
-    top: 7px;
-    left: 7px;
-    transition: 0.2s;
-    border-radius: 20px;
-}
-
-.delete_button:hover:after {
-    top: 0px;
-    left: 0px;
 }
 
 .form {

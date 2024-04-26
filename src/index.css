@@ -17,6 +17,8 @@ body {
   min-height: 100vh;
   color: #0b0c0b;
   background-color: rgb(225, 222, 227);
+  height: 100%;
+    padding: 0;
 }
 
 h1,h2,p {

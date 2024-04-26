@@ -29,17 +29,14 @@ const ModalChange = ({contact,setShowModalChange}) => {
  
   const handleSubmit = (values, actions) => {
       const updateContact = { ...values };
-      console.log(updateContact)
       dispatch(changeContact({ contactId, updateContact }));
-    actions.resetForm();
+      actions.resetForm();
     }
   
     return (
         <div className={css.backdrop}>
             <div className={css.modal}>
                 <button type="button" className={css.close_button} onClick={() => setShowModalChange(false)}><IoCloseSharp /></button>
-               
-  
     <Toaster position="top-center" reverseOrder={false}/>
       <Formik initialValues={initialValues} onSubmit= {handleSubmit} validationSchema={ContactFormSchema}>
       <Form className={css.form}>

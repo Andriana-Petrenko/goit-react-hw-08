@@ -1,11 +1,11 @@
 .footer {
     border-radius: 0 0 8px 8px;
-    z-index: 0;
-    position: fixed;
-    left: 0;
+    /* z-index: 0;
+    position: relative;
+    left: -50%;
     bottom: 0;
-    width: 100vw;
+    width: 100vw; */
     color:gray;
     padding-bottom: 10px;
-
+margin-top: auto;
 }
