@@ -18,9 +18,9 @@ const Contact = ({ contact }) => {
           <div className={css.wrapper_contact}>
             <h2><FaUser size="16"/> {contact.name}</h2>
             <p><FaPhone size="16"/> {contact.number}</p>
-          </div>
-      <button type="button" className={css.delete_button} onClick={() => setShowModal(true)}>Delete</button>
+      </div>
       <button type="button" className={css.delete_button} onClick={() => setShowModalChange(true)}>Change</button>
+      <button type="button" className={css.delete_button} onClick={() => setShowModal(true)}>Delete</button>
     </li>
     {showModal && <Modal contact={contact} setShowModal={setShowModal} />}
     {showModalChange && <ModalChange contact={contact} setShowModalChange={setShowModalChange} />}
