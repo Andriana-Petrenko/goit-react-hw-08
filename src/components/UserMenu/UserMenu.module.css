@@ -5,7 +5,7 @@
     gap: 20px
 }
 
-.logOut_button {
+/* .logOut_button {
     display: flex;
     padding: 8px 30px;
     border: 1px solid rgb(144, 26, 228);
@@ -20,8 +20,53 @@
 .logOut_button:focus {
     color: rgb(144, 26, 228);
     transform: scale(1.04);
-}
+} */
 
 .name_user{
     text-transform: uppercase;
+}
+
+.logOut_button {
+    background-color: transparent;
+    border: 1px solid #433a46ab;
+    color: #00132C;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 16px 23px;
+    position: relative;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.logOut_button:hover,
+.logOut_button:active {
+    outline: 0;
+}
+
+.logOut_button:hover {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.logOut_button:before {
+    background-color: #d4bee2;
+    content: "";
+    height: calc(100% + 3px);
+    position: absolute;
+    right: -7px;
+    top: -9px;
+    transition: background-color 300ms ease-in;
+    width: 100%;
+    z-index: -1;
+    border-radius: 20px;
+}
+
+.logOut_button:hover:before {
+    background-color: rgb(184, 132, 222);
+}
+
+
+.active:before {
+    background-color: rgba(114, 57, 155, 0.712);
+
 }
