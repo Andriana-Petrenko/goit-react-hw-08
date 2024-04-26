@@ -27,8 +27,8 @@ const ContactsPage = () => {
     <h1>Your contacts</h1>
     <ContactForm />
     <SearchBox />
-    {loading && !error && <Loader />}
-    <ContactList />
+    {loading && !error ?<Loader />:<ContactList />}
+    
     
   </>
   )
