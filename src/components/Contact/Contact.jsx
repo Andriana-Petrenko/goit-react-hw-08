@@ -4,12 +4,13 @@ import css from "./Contact.module.css"
 import { Toaster } from 'react-hot-toast'
 import Modal from "../Modal/Modal"
 import { useState } from "react"
+import ModalChange from "../ModalChange/ModalChange"
 
 
 
 const Contact = ({ contact }) => {
   const [showModal, setShowModal] = useState(false);
-  
+  const [showModalChange, setShowModalChange] = useState(false);
 
   return (<>
     <Toaster position="top-center" reverseOrder={false} />
@@ -19,8 +20,10 @@ const Contact = ({ contact }) => {
             <p><FaPhone size="16"/> {contact.number}</p>
           </div>
       <button type="button" className={css.delete_button} onClick={() => setShowModal(true)}>Delete</button>
+      <button type="button" className={css.delete_button} onClick={() => setShowModalChange(true)}>Change</button>
     </li>
     {showModal && <Modal contact={contact} setShowModal={setShowModal} />}
+    {showModalChange && <ModalChange contact={contact} setShowModalChange={setShowModalChange} />}
   </>
   )
 }
